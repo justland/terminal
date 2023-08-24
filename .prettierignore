@@ -1,0 +1,6 @@
+coverage/
+fixtures/
+lib/
+*.md
+*.yml
+*.yaml
