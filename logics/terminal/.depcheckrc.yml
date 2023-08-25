@@ -1,0 +1,7 @@
+ignores:
+  - '@repobuddy/jest' # depcheck doesn't recognize jest plugins/presets
+  - '@size-limit/*' # depcheck doesn't recognize size-limit plugins
+  - '@types/*'
+  - 'eslint*' # hoisted to the root of the repo
+  - jest-* # depcheck doesn't recognize jest plugins/presets
+  - ts-jest # depcheck doesn't recognize jest plugins

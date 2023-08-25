@@ -1,0 +1,12 @@
+{
+	"recommendations": [
+		"streetsidesoftware.code-spell-checker",
+		"aaron-bond.better-comments",
+		"editorconfig.editorconfig",
+		"yzhang.markdown-all-in-one",
+		"davidanson.vscode-markdownlint",
+		"esbenp.prettier-vscode",
+		"unional.vscode-sort-package-json",
+		"dbaeumer.vscode-eslint"
+	]
+}

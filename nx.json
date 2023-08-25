@@ -1,0 +1,49 @@
+{
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "coverage",
+          "depcheck",
+          "lint",
+          "size",
+          "test",
+          "verify"
+        ]
+      }
+    }
+  },
+  "targetDefaults": {
+    "size": {
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "nuke": {
+      "dependsOn": [
+        "clean"
+      ]
+    },
+    "build": {
+      "outputs": [
+        "{projectRoot}/lib"
+      ]
+    },
+    "coverage": {
+      "outputs": [
+        "{projectRoot}/coverage"
+      ]
+    },
+    "verify": {
+      "outputs": [
+        "{projectRoot}/coverage",
+        "{projectRoot}/lib"
+      ]
+    }
+  },
+  "affected": {
+    "defaultBase": "main"
+  }
+}
