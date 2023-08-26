@@ -2,6 +2,7 @@
   "private": true,
   "description": "Just Web Terminal Repository",
   "scripts": {
+    "ansi": "pnpm --filter ./logics/ansi",
     "build": "nx run-many -t build",
     "clean": "nx run-many -t clean",
     "depcheck": "nx run-many -t depcheck",
