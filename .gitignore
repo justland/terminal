@@ -68,12 +68,12 @@ common/autoinstallers/*/.npmrc
 .turbo
 
 # project specific
-ui/*/lib/**
-logics/*/lib/**
-shared/*/lib/**
-ui/*/coverage/**
-logics/*/coverage/**
-shared/*/coverage/**
+ui/*/lib/
+logics/*/lib/
+shared/*/lib/
+ui/*/coverage/
+logics/*/coverage/
+shared/*/coverage/
 ui/*/*.tsbuildinfo
 logics/*/*.tsbuildinfo
 shared/*/*.tsbuildinfo
