@@ -65,3 +65,7 @@ it('parses report device status', () => {
 		}
 	])
 })
+
+it('parses color', () => {
+	expect(tokenizer(`${ESCAPE}[0n`)).toEqual([{ type: 'report_device_ok' }])
+})
