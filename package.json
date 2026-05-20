@@ -1,40 +1,38 @@
 {
-  "private": true,
-  "description": "Just Web Terminal Repository",
-  "scripts": {
-    "ansi": "pnpm --filter ./logics/ansi",
-    "build": "nx run-many -t build",
-    "clean": "nx run-many -t clean",
-    "depcheck": "nx run-many -t depcheck",
-    "coverage": "nx run-many -t coverage",
-    "lint": "eslint .",
-    "nuke": "nx run-many -t clean nuke && pnpm nuke:local",
-    "nuke:local": "rimraf node_modules",
-    "test": "nx run-many -t test",
-    "size": "nx run-many -t size",
-    "verify": "nx run-many -t lint depcheck build coverage size",
-    "terminal": "pnpm --filter ./logics/terminal",
-    "prepare": "husky install"
-  },
-  "devDependencies": {
-    "@changesets/assemble-release-plan": "^5.2.3",
-    "@changesets/cli": "^2.25.2",
-    "@commitlint/cli": "^17.7.1",
-    "@commitlint/config-conventional": "^17.7.0",
-    "eslint": "^8.28.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-harmony": "^7.1.1",
-    "eslint-plugin-yml": "^1.2.0",
-    "husky": "^8.0.2",
-    "npm-run-all": "^4.1.5",
-    "nx": "16.7.4",
-    "rimraf": "^5.0.0",
-    "typescript": "^5.0.0"
-  },
-  "packageManager": "pnpm@8.7.1",
-  "pnpm": {
-    "patchedDependencies": {
-      "@changesets/assemble-release-plan@5.2.3": "patches/@changesets__assemble-release-plan@5.2.3.patch"
-    }
-  }
+	"private": true,
+	"description": "Just Web Terminal Repository",
+	"scripts": {
+		"ansi": "pnpm --filter ./logics/ansi",
+		"build": "nx run-many -t build",
+		"clean": "nx run-many -t clean",
+		"depcheck": "nx run-many -t depcheck",
+		"coverage": "nx run-many -t coverage",
+		"lint": "eslint .",
+		"nuke": "nx run-many -t clean nuke && pnpm nuke:local",
+		"nuke:local": "rimraf node_modules",
+		"test": "nx run-many -t test",
+		"size": "nx run-many -t size",
+		"verify": "nx run-many -t lint depcheck build coverage size",
+		"terminal": "pnpm --filter ./logics/terminal",
+		"prepare": "husky install"
+	},
+	"devDependencies": {
+		"@changesets/assemble-release-plan": "^5.2.3",
+		"@changesets/cli": "^2.25.2",
+		"@commitlint/cli": "^17.7.1",
+		"@commitlint/config-conventional": "^17.7.0",
+		"eslint": "^8.28.0",
+		"eslint-config-prettier": "^9.0.0",
+		"eslint-plugin-harmony": "^7.1.1",
+		"eslint-plugin-yml": "^1.2.0",
+		"husky": "^8.0.2",
+		"npm-run-all": "^4.1.5",
+		"nx": "16.7.4",
+		"rimraf": "^5.0.0",
+		"typescript": "^5.0.0"
+	},
+	"packageManager": "pnpm@11.1.3",
+	"patchedDependencies": {
+		"@changesets/assemble-release-plan@5.2.3": "patches/@changesets__assemble-release-plan@5.2.3.patch"
+	}
 }
