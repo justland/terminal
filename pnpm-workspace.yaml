@@ -8,3 +8,10 @@ allowBuilds:
   esbuild: true
   fsevents: true
   nx: true
+overrides:
+  # Three @types/node copies (12, 20, 25) reached the build through transitive
+  # `/// <reference types="node" />`, and TypeScript loaded all of them:
+  # hundreds of TS2300 duplicate-identifier errors from inside @types itself.
+  # Collapsing them to one copy is the fix; the version tracks the newest Node
+  # the CI matrix runs.
+  '@types/node': ^25.9.0
