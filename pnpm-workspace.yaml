@@ -12,3 +12,19 @@ overrides:
   # Collapsing them to one copy is the fix; the version tracks the newest Node
   # the CI matrix runs.
   '@types/node': ^25.9.0
+  # Advisories with no upgrade path: every one of these arrives through a
+  # devDependency (depcheck, vitest, size-limit) whose own latest release still
+  # pins the vulnerable version, so there is nothing to bump directly. Each
+  # override is the smallest same-major step to the patched release; the caret
+  # keeps it inside that major, which a bare `>=` does not.
+  #
+  # Exit condition: drop each line once the parent ships a release that resolves
+  # to the patched version on its own. `pnpm why -r <pkg>` names the parent.
+  'brace-expansion@1': '^1.1.18'
+  'brace-expansion@2': '^2.1.4'
+  'brace-expansion@5': '^5.0.7'
+  'fast-uri@3': '^3.1.5'
+  'js-yaml@3': '^3.15.1'
+  'js-yaml@4': '^4.3.1'
+  'nanoid@3': '^3.3.18'
+  'postcss@8': '^8.5.23'
