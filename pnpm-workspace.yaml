@@ -3,11 +3,8 @@ packages:
   - logics/*
   - libraries/*
 allowBuilds:
-  '@parcel/watcher': true
-  '@swc/core': true
   esbuild: true
   fsevents: true
-  nx: true
 overrides:
   # Three @types/node copies (12, 20, 25) reached the build through transitive
   # `/// <reference types="node" />`, and TypeScript loaded all of them:
