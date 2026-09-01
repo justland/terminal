@@ -1,4 +1,36 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["github>unional/renovate-preset"]
+	"description": [
+		"The baseline policy, written out here rather than inherited.",
+		"github>unional/renovate-preset is currently {\"extends\": [\"config:base\", \":preserveSemverRanges\"]} and carries none of this — no automerge, no release-age soak, no packageRules. Extending it would open PRs that never merge. Collapse this back to that preset once it actually publishes the policy."
+	],
+	"extends": ["config:recommended", ":preserveSemverRanges", ":semanticCommits"],
+	"minimumReleaseAge": "3 days",
+	"platformAutomerge": true,
+	"rebaseWhen": "auto",
+	"packageRules": [
+		{
+			"matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+			"automerge": true
+		},
+		{
+			"matchDepTypes": ["devDependencies"],
+			"automerge": true
+		},
+		{
+			"description": "Majors break builds in ways CI catches but a human should choose to absorb.",
+			"matchUpdateTypes": ["major"],
+			"automerge": false,
+			"additionalBranchPrefix": "major-"
+		}
+	],
+	"vulnerabilityAlerts": {
+		"description": "One day rather than zero: a malicious fix release is exactly what an instant security merge would swallow.",
+		"minimumReleaseAge": "1 day",
+		"automerge": true
+	},
+	"lockFileMaintenance": {
+		"enabled": true,
+		"automerge": true
+	}
 }
