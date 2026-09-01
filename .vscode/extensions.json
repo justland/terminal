@@ -5,8 +5,7 @@
 		"editorconfig.editorconfig",
 		"yzhang.markdown-all-in-one",
 		"davidanson.vscode-markdownlint",
-		"esbenp.prettier-vscode",
-		"unional.vscode-sort-package-json",
-		"dbaeumer.vscode-eslint"
+		"biomejs.biome",
+		"unional.vscode-sort-package-json"
 	]
 }

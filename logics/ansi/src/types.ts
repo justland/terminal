@@ -29,8 +29,8 @@ export interface QueryCursorPosition {
 }
 
 export interface ReportCursorPosition {
-	type: 'report_cursor_position',
-	row: number,
+	type: 'report_cursor_position'
+	row: number
 	column: number
 }
 
@@ -55,34 +55,34 @@ export interface FontSetG1 {
 }
 
 export interface CursorHome {
-	type: 'cursor_home',
-	row?: number,
+	type: 'cursor_home'
+	row?: number
 	column?: number
 }
 
 export interface CursorUp {
-	type: 'cursor_up',
+	type: 'cursor_up'
 	count?: number
 }
 
 export interface CursorDown {
-	type: 'cursor_down',
+	type: 'cursor_down'
 	count?: number
 }
 
 export interface CursorForward {
-	type: 'cursor_forward',
+	type: 'cursor_forward'
 	count?: number
 }
 
 export interface CursorBackward {
-	type: 'cursor_backward',
+	type: 'cursor_backward'
 	count?: number
 }
 
 export interface ForceCursorPosition {
-	type: 'force_cursor_position',
-	row?: number,
+	type: 'force_cursor_position'
+	row?: number
 	column?: number
 }
 
@@ -107,8 +107,8 @@ export interface ScrollScreen {
 }
 
 export interface ScrollScreenRange {
-	type: 'scroll_screen_range',
-	start: number,
+	type: 'scroll_screen_range'
+	start: number
 	end: number
 }
 
@@ -173,8 +173,8 @@ export interface StartPrintLog {
 }
 
 export interface SetKeyDefinition {
-	type: 'set_key_definition',
-	key: string,
+	type: 'set_key_definition'
+	key: string
 	string: string
 }
 

@@ -1,10 +1,7 @@
 {
-  "extends": "@repobuddy/typescript/tsconfig/monorepo.json",
-  "compilerOptions": {
-    "rootDir": "src"
-  },
-  "include": [
-    "src",
-    "types"
-  ]
+	"extends": "@repobuddy/typescript/tsconfig/monorepo.json",
+	"compilerOptions": {
+		"rootDir": "src"
+	},
+	"include": ["src", "types"]
 }

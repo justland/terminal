@@ -43,10 +43,4 @@ export function tokenizer(text: string): Token[] {
 		}
 		return p
 	}, [])
-	return [
-		{
-			type: 'text',
-			text
-		}
-	]
 }
