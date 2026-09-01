@@ -1,6 +1,7 @@
 {
   "name": "@just-web/terminal",
   "version": "0.0.0",
+  "private": true,
   "homepage": "https://github.com/justland/terminal/tree/main/logics/terminal",
   "bugs": {
     "url": "https://github.com/justland/terminal/issues"

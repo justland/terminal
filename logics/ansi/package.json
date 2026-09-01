@@ -2,6 +2,7 @@
   "name": "@just-web/ansi",
   "description": "Just a ANSI parsing and processing library.",
   "version": "0.0.0",
+  "private": true,
   "homepage": "https://github.com/justland/terminal/tree/main/logics/ansi",
   "bugs": {
     "url": "https://github.com/justland/terminal/issues"
