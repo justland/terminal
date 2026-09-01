@@ -1,0 +1,52 @@
+name: release
+on:
+  push:
+    branches: [main]
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  code:
+    uses: justland/.github/.github/workflows/pnpm-verify.yml@main
+
+  release:
+    needs: code
+    runs-on: ubuntu-latest
+    # Secretless publishing: npm authenticates with the OIDC token minted here,
+    # so no NPM_TOKEN or PAT is needed. Each package registers this repo and
+    # `release.yml` as a trusted publisher on npmjs.com.
+    permissions:
+      id-token: write
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: lts/*
+          cache: pnpm
+
+      # Trusted publishing needs npm >= 11.5.1; do not rely on what Node bundles.
+      - name: Use an npm that supports trusted publishing
+        run: npm install -g npm@11
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm build
+
+      - name: Create release pull request or publish to npm
+        uses: changesets/action@v1
+        with:
+          commit: 'chore: version packages'
+          title: 'chore: version packages'
+          version: pnpm run version
+          publish: pnpm run release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

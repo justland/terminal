@@ -11,6 +11,8 @@
 		"nuke": "nx run-many -t clean nuke && pnpm nuke:local",
 		"nuke:local": "rimraf node_modules",
 		"test": "nx run-many -t test",
+		"version": "changeset version",
+		"release": "changeset publish",
 		"size": "nx run-many -t size",
 		"verify": "nx run-many -t lint depcheck build coverage size",
 		"terminal": "pnpm --filter ./logics/terminal",
