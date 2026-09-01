@@ -30,7 +30,7 @@
 	"types": "./lib/index.d.ts",
 	"files": [
 		"lib",
-		"ts",
+		"src",
 		"!**/*.{spec,test,unit,accept,integrate,system,perf,stress}.*"
 	],
 	"scripts": {
