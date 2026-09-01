@@ -1,64 +1,28 @@
 {
-  "$schema": "https://turbo.build/schema.json",
-  "pipeline": {
-    "build": {
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "src/**/*.{ts,tsx}",
-        "package.json",
-        "tsconfig.*.json"
-      ],
-      "outputs": [
-        "lib/**"
-      ]
-    },
-    "clean": {
-      "cache": false
-    },
-    "coverage": {
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "src/**/*.{ts,tsx}",
-        "jest.config.*",
-        "package.json",
-        "tsconfig.*.json"
-      ],
-      "outputs": [
-        "coverage/**"
-      ]
-    },
-    "depcheck": {
-      "dependsOn": [
-        "^build"
-      ]
-    },
-    "dev": {
-      "cache": false
-    },
-    "lint": {
-      "dependsOn": [
-        "^build"
-      ]
-    },
-    "sb": {},
-    "size": {
-      "dependsOn": [
-        "build"
-      ]
-    },
-    "test": {
-      "dependsOn": [
-        "^build"
-      ]
-    },
-    "update_snapshots": {
-      "dependsOn": [
-        "^build"
-      ]
-    }
-  }
+	"$schema": "https://turbo.build/schema.json",
+	"tasks": {
+		"build": {
+			"dependsOn": ["^build"],
+			"inputs": ["package.json", "tsconfig.*.json", "src/**/*.{ts,tsx}"],
+			"outputs": ["lib/**", "*.tsbuildinfo"]
+		},
+		"clean": { "cache": false },
+		"coverage": {
+			"dependsOn": ["^build"],
+			"inputs": ["package.json", "tsconfig.*.json", "vitest.config.*", "src/**/*.{ts,tsx}"],
+			"outputs": ["coverage/**"]
+		},
+		"depcheck": {
+			"inputs": ["package.json", ".depcheckrc.*", "src/**/*.{ts,tsx}"]
+		},
+		"nuke": { "cache": false },
+		"size": {
+			"dependsOn": ["build"],
+			"inputs": [".size-limit.json", "lib/**"]
+		},
+		"test": {
+			"dependsOn": ["^build"],
+			"inputs": ["package.json", "tsconfig.*.json", "vitest.config.*", "src/**/*.{ts,tsx}"]
+		}
+	}
 }
