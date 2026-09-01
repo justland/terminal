@@ -1,8 +1,7 @@
 ignores:
-  - '@repobuddy/jest' # depcheck doesn't recognize jest plugins/presets
+  - '@repobuddy/typescript' # referenced by tsconfig, which depcheck does not read
   - '@size-limit/*' # depcheck doesn't recognize size-limit plugins
   - '@types/*'
-  - 'eslint*' # hoisted to the root of the repo
+  - '@vitest/coverage-v8' # loaded by vitest, never imported
+  - npm-run-all2 # provides run-s for the `nuke` script
   - rimraf # used by the `clean` script, which depcheck does not read
-  - jest-* # depcheck doesn't recognize jest plugins/presets
-  - ts-jest # depcheck doesn't recognize jest plugins

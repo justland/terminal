@@ -1,6 +1,6 @@
-import { expect, it } from '@jest/globals'
-import { tokenizer } from './tokenizer.js'
+import { expect, it } from 'vitest'
 import { ESCAPE } from './constants.js'
+import { tokenizer } from './tokenizer.js'
 
 it('parse text', () => {
 	expect(tokenizer('hello')).toEqual([{ type: 'text', text: 'hello' }])
