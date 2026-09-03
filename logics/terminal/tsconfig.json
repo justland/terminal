@@ -1,3 +1,11 @@
 {
-	"extends": "./tsconfig.build.json"
+	"extends": "@repobuddy/typescript/tsconfig/monorepo.json",
+	"compilerOptions": {
+		"module": "Node16",
+		"verbatimModuleSyntax": true,
+		"noEmit": true,
+		"skipLibCheck": true,
+		"types": ["node"]
+	},
+	"include": ["src", "types", "tsdown.config.ts", "vitest.config.ts"]
 }
