@@ -1,7 +1,14 @@
 ignores:
-  - '@repobuddy/typescript' # referenced by tsconfig, which depcheck does not read
-  - '@size-limit/*' # depcheck doesn't recognize size-limit plugins
-  - '@types/*'
-  - '@vitest/coverage-v8' # loaded by vitest, never imported
-  - npm-run-all2 # provides run-s for the `nuke` script
-  - rimraf # used by the `clean` script, which depcheck does not read
+  # Referenced by tsconfig.json, which depcheck does not read.
+  - '@repobuddy/typescript'
+  # `types: ["node"]` in tsconfig.json, which depcheck does not read.
+  - '@types/node'
+  # size-limit plugins, named in .size-limit.json and never imported.
+  - '@size-limit/esbuild'
+  - '@size-limit/preset-small-lib'
+  # Loaded by vitest through --coverage, never imported.
+  - '@vitest/coverage-v8'
+  # Provides run-s for the `nuke` script.
+  - npm-run-all2
+  # Used by the `clean` script, which depcheck does not read.
+  - rimraf
