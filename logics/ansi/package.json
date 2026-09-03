@@ -35,7 +35,8 @@
 		"!**/*.{spec,test,unit,accept,integrate,system,perf,stress}.*"
 	],
 	"scripts": {
-		"build": "tsc -p tsconfig.build.json",
+		"build": "tsdown",
+		"build:watch": "tsdown --watch",
 		"clean": "rimraf coverage lib --glob *.tsbuildinfo",
 		"coverage": "vitest run --coverage",
 		"depcheck": "depcheck",
@@ -43,6 +44,7 @@
 		"nuke:local": "rimraf node_modules",
 		"size": "size-limit",
 		"test": "vitest run",
+		"typecheck": "tsc",
 		"w": "vitest"
 	},
 	"devDependencies": {
@@ -55,6 +57,7 @@
 		"npm-run-all2": "^9.0.3",
 		"rimraf": "^6.1.3",
 		"size-limit": "^13.0.3",
+		"tsdown": "^0.22.14",
 		"typescript": "^7.0.2",
 		"vitest": "^4.1.11"
 	}

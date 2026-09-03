@@ -19,8 +19,9 @@
 		"size": "turbo run size",
 		"terminal": "pnpm --filter ./logics/terminal",
 		"test": "turbo run test",
+		"typecheck": "turbo run typecheck",
 		"verify": "run-p check verify:pkg",
-		"verify:pkg": "turbo run build coverage depcheck size",
+		"verify:pkg": "turbo run build typecheck coverage depcheck size",
 		"version": "changeset version"
 	},
 	"devDependencies": {

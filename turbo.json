@@ -3,10 +3,12 @@
 	"tasks": {
 		"build": {
 			"dependsOn": ["^build"],
-			"inputs": ["package.json", "tsconfig.*.json", "src/**/*.{ts,tsx}"],
+			"inputs": ["package.json", "tsconfig.*.json", "tsconfig.json", "tsdown.config.ts", "src/**/*.{ts,tsx}"],
 			"outputs": ["lib/**", "*.tsbuildinfo"]
 		},
-		"clean": { "cache": false },
+		"clean": {
+			"cache": false
+		},
 		"coverage": {
 			"dependsOn": ["^build"],
 			"inputs": ["package.json", "tsconfig.*.json", "vitest.config.*", "src/**/*.{ts,tsx}"],
@@ -15,7 +17,9 @@
 		"depcheck": {
 			"inputs": ["package.json", ".depcheckrc.*", "src/**/*.{ts,tsx}"]
 		},
-		"nuke": { "cache": false },
+		"nuke": {
+			"cache": false
+		},
 		"size": {
 			"dependsOn": ["build"],
 			"inputs": [".size-limit.json", "lib/**"]
@@ -23,6 +27,9 @@
 		"test": {
 			"dependsOn": ["^build"],
 			"inputs": ["package.json", "tsconfig.*.json", "vitest.config.*", "src/**/*.{ts,tsx}"]
+		},
+		"typecheck": {
+			"inputs": ["package.json", "tsconfig.json", "tsdown.config.ts", "vitest.config.*", "src/**/*.{ts,tsx}"]
 		}
 	}
 }
