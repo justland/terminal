@@ -170,7 +170,7 @@ overrides:
   fast-uri@3: ^3.1.5
   js-yaml@3: ^3.15.1
   js-yaml@4: ^4.3.1
-  nanoid@3: ^3.3.18
+  nanoid@3: ^6.0.0
   postcss@8: ^8.5.23
 
 importers:
@@ -1887,9 +1887,9 @@ packages:
     resolution: {integrity: sha512-ypMKuglUrZUD99Tk2bUQ+xNQj43lPEfAeX2o9cTteAmShXy2VHDJpuwu1o0xqoKCt9jLVAvwyFKdLTPXKAfJyA==}
     engines: {node: '>=10'}
 
-  nanoid@3.3.19:
-    resolution: {integrity: sha512-Y2tUNy4ouw6tq5oDSKeQYGOyhkUBhNOcGV/02KC+6kd9eDGqdZd++mjMiIDilrBYvjEnCYvVtsuHCuP+okSfug==}
-    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
+  nanoid@6.0.1:
+    resolution: {integrity: sha512-3wVS3i51pE2pi1k5FFL/95BGfVS0kSsvDVuGXHOtxox/TywUmtgq+3qiTOTbs9J7KfHaXPiN171k/A6dBnaXFw==}
+    engines: {node: ^22 || ^24 || >=26}
     hasBin: true
 
   nanospinner@1.2.2:
@@ -3783,7 +3783,7 @@ snapshots:
       arrify: 2.0.1
       minimatch: 3.1.5
 
-  nanoid@3.3.19: {}
+  nanoid@6.0.1: {}
 
   nanospinner@1.2.2:
     dependencies:
@@ -3867,7 +3867,7 @@ snapshots:
 
   postcss@8.5.28:
     dependencies:
-      nanoid: 3.3.19
+      nanoid: 6.0.1
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
