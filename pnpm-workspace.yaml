@@ -11,7 +11,7 @@ overrides:
   # hundreds of TS2300 duplicate-identifier errors from inside @types itself.
   # Collapsing them to one copy is the fix; the version tracks the newest Node
   # the CI matrix runs.
-  '@types/node': ^25.9.0
+  '@types/node': ^26.0.0
   # Advisories with no upgrade path: every one of these arrives through a
   # devDependency (depcheck, vitest, size-limit) whose own latest release still
   # pins the vulnerable version, so there is nothing to bump directly. Each
